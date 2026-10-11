@@ -1,21 +1,24 @@
 {
-  "dependencies": {
-    "@calcit/procs": "0.29.0",
-    "@triadica/lagopus": "^0.2.0",
-    "@triadica/touch-control": "^0.0.4-a1"
+  "name": "syntax-cards",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "yarn@4.18.0",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "check": "tsc --noEmit",
+    "test": "node --import tsx --test src/*.test.ts",
+    "build": "yarn check && vite build",
+    "preview": "vite preview --host 0.0.0.0",
+    "examples:refresh": "node scripts/extract-examples.mjs"
   },
   "devDependencies": {
-    "bottom-tip": "^0.1.5",
-    "vite": "^7.1.9",
-    "vite-plugin-glsl": "^1.5.4"
+    "@types/node": "^22.0.0",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0",
+    "vite": "^6.1.0"
   },
-  "version": "0.0.1",
-  "packageManager": "yarn@4.18.0",
-  "type": "module",
-  "scripts": {
-    "compile": "calcit",
-    "watch": "calcit -w",
-    "dev": "yarn compile && vite",
-    "build": "yarn compile && vite build"
+  "dependencies": {
+    "@cirru/parser.ts": "0.0.10"
   }
 }
